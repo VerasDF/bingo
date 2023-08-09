@@ -1,0 +1,81 @@
+*{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* font-family: 'Courier New', Courier, monospace; */
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    /* font-size: xx-large; */
+    background-color: #222;
+    color: #AAA;
+}
+td{
+    font-size: 2em;
+    /* border: solid 1px blue; */
+    border-radius: 3px;
+    text-align: center;
+}
+div{
+    display:list-item;
+    max-width: 365px;
+    min-width: 300px;
+}
+.menuButtonAtivado, .menuButtonDesativado{
+    border: solid 1px #969696;
+    border-bottom: none;
+    font-size: 0.6em;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: -4px;
+}
+.menuButtonDesativado{
+    opacity: 10%;
+}
+.numeroNaoSorteado, .numeroSorteado, .trevo{
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    font-size: 0.6em;
+}
+.numeroNaoSorteado{
+    color: #898989;
+    /* background-color: #222; */
+    box-shadow: none;
+}
+.numeroNaoSorteado:hover{
+    background-color: #111;
+}
+.numeroSorteado{
+    color: #000;
+    background-color: #ef6;
+    box-shadow: 0px 0px 10px rgb(136, 136, 121);
+}
+.trevo{
+    color: white;
+}
+#divCartela{
+    width: 100%;
+}
+#idGerarNovosNumeros{
+    font-size: 1.3em;
+    width: 100%;
+    height: 50px;
+}
+#tableCartela{
+    border:1px solid #969696;
+    border-spacing: 8px;
+    margin: 0px;
+    width: 100%;
+}
+#idCodCartela{
+    color: #555;
+    text-align: center;
+}
+#divCopyRight, #divAvisos{
+    font-size: 0.8em;
+    color: #555;
+    text-align: center;
+}
+#divAvisos{
+    font-size: 1em;
+    color: #969696;
+}

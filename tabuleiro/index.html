@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B I N G O - Tabuleiro</title>
+    <link rel="icon" type="image/png" sizes="16x16"  href="../favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="bingo.css">
+    <script src="bingo.js" defer></script>
+</head>
+<body>
+    <div id="divAutomatico">
+        <label>Automático
+            <input type="checkbox" id="chkAutomatico">
+        </label>
+        <label>intervalo
+            <input type="range" id="ranIntervalo" min="100" max="10000" value="1000" step="100">
+        </label>
+    </div>
+    <div id="divMenu">
+        <button id="btnMenuSorteio" class="menuLateral menuBtn1 delay1">Sorteio</button>
+        <button id="btnMenuHistorico" class="menuLateral menuBtn2 delay2">Histórico</button>
+    </div>
+    <div id="divPainel">
+        <input type="button" id="btnSortearNumero" value="Sortear Número"><br>
+        <div id="divNumeroSorteado" class="numeroSorteadoPrincipal"></div>
+        <label id="lblNumerosRestantes"></label>
+    </div>
+    <div id="divResultado">
+        <table id="tablePainelBingo">
+            <th>B</th>
+            <th>I</th>
+            <th>N</th>
+            <th>G</th>
+            <th>O</th>
+            <tbody>
+                <tr>
+                    <td id="B1" class="numeroNaoSorteado">1</td>
+                    <td id="I16" class="numeroNaoSorteado">16</td>
+                    <td id="N31" class="numeroNaoSorteado">31</td>
+                    <td id="G46" class="numeroNaoSorteado">46</td>
+                    <td id="O61" class="numeroNaoSorteado">61</td>
+                </tr>
+                <tr>
+                    <td id="B2" class="numeroNaoSorteado">2</td>
+                    <td id="I17" class="numeroNaoSorteado">17</td>
+                    <td id="N32" class="numeroNaoSorteado">32</td>
+                    <td id="G47" class="numeroNaoSorteado">47</td>
+                    <td id="O62" class="numeroNaoSorteado">62</td>
+                </tr>
+                <tr>
+                    <td id="B3" class="numeroNaoSorteado">3</td>
+                    <td id="I18" class="numeroNaoSorteado">18</td>
+                    <td id="N33" class="numeroNaoSorteado">33</td>
+                    <td id="G48" class="numeroNaoSorteado">48</td>
+                    <td id="O63" class="numeroNaoSorteado">63</td>
+                </tr>
+                <tr>
+                    <td id="B4" class="numeroNaoSorteado">4</td>
+                    <td id="I19" class="numeroNaoSorteado">19</td>
+                    <td id="N34" class="numeroNaoSorteado">34</td>
+                    <td id="G49" class="numeroNaoSorteado">49</td>
+                    <td id="O64" class="numeroNaoSorteado">64</td>
+                </tr>
+                <tr>
+                    <td id="B5" class="numeroNaoSorteado">5</td>
+                    <td id="I20" class="numeroNaoSorteado">20</td>
+                    <td id="N35" class="numeroNaoSorteado">35</td>
+                    <td id="G50" class="numeroNaoSorteado">50</td>
+                    <td id="O65" class="numeroNaoSorteado">65</td>
+                </tr>
+                <tr>
+                    <td id="B6" class="numeroNaoSorteado">6</td>
+                    <td id="I21" class="numeroNaoSorteado">21</td>
+                    <td id="N36" class="numeroNaoSorteado">36</td>
+                    <td id="G51" class="numeroNaoSorteado">51</td>
+                    <td id="O66" class="numeroNaoSorteado">66</td>
+                </tr>
+                <tr>
+                    <td id="B7" class="numeroNaoSorteado">7</td>
+                    <td id="I22" class="numeroNaoSorteado">22</td>
+                    <td id="N37" class="numeroNaoSorteado">37</td>
+                    <td id="G52" class="numeroNaoSorteado">52</td>
+                    <td id="O67" class="numeroNaoSorteado">67</td>
+                </tr>
+                <tr>
+                    <td id="B8" class="numeroNaoSorteado">8</td>
+                    <td id="I23" class="numeroNaoSorteado">23</td>
+                    <td id="N38" class="numeroNaoSorteado">38</td>
+                    <td id="G53" class="numeroNaoSorteado">53</td>
+                    <td id="O68" class="numeroNaoSorteado">68</td>
+                </tr>
+                <tr>
+                    <td id="B9" class="numeroNaoSorteado">9</td>
+                    <td id="I24" class="numeroNaoSorteado">24</td>
+                    <td id="N39" class="numeroNaoSorteado">39</td>
+                    <td id="G54" class="numeroNaoSorteado">54</td>
+                    <td id="O69" class="numeroNaoSorteado">69</td>
+                </tr>
+                <tr>
+                    <td id="B10" class="numeroNaoSorteado">10</td>
+                    <td id="I25" class="numeroNaoSorteado">25</td>
+                    <td id="N40" class="numeroNaoSorteado">40</td>
+                    <td id="G55" class="numeroNaoSorteado">55</td>
+                    <td id="O70" class="numeroNaoSorteado">70</td>
+                </tr>
+                <tr>
+                    <td id="B11" class="numeroNaoSorteado">11</td>
+                    <td id="I26" class="numeroNaoSorteado">26</td>
+                    <td id="N41" class="numeroNaoSorteado">41</td>
+                    <td id="G56" class="numeroNaoSorteado">56</td>
+                    <td id="O71" class="numeroNaoSorteado">71</td>
+                </tr>
+                <tr>
+                    <td id="B12" class="numeroNaoSorteado">12</td>
+                    <td id="I27" class="numeroNaoSorteado">27</td>
+                    <td id="N42" class="numeroNaoSorteado">42</td>
+                    <td id="G57" class="numeroNaoSorteado">57</td>
+                    <td id="O72" class="numeroNaoSorteado">72</td>
+                </tr>
+                <tr>
+                    <td id="B13" class="numeroNaoSorteado">13</td>
+                    <td id="I28" class="numeroNaoSorteado">28</td>
+                    <td id="N43" class="numeroNaoSorteado">43</td>
+                    <td id="G58" class="numeroNaoSorteado">58</td>
+                    <td id="O73" class="numeroNaoSorteado">73</td>
+                </tr>
+                <tr>
+                    <td id="B14" class="numeroNaoSorteado">14</td>
+                    <td id="I29" class="numeroNaoSorteado">29</td>
+                    <td id="N44" class="numeroNaoSorteado">44</td>
+                    <td id="G59" class="numeroNaoSorteado">59</td>
+                    <td id="O74" class="numeroNaoSorteado">74</td>
+                </tr>
+                <tr>
+                    <td id="B15" class="numeroNaoSorteado">15</td>
+                    <td id="I30" class="numeroNaoSorteado">30</td>
+                    <td id="N45" class="numeroNaoSorteado">45</td>
+                    <td id="G60" class="numeroNaoSorteado">60</td>
+                    <td id="O75" class="numeroNaoSorteado">75</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="divHistorico" class="historico">
+        <table id="tableHistorico">
+        </table>
+    </div>
+    <div id="divCopyRight"><label id="lblCopyRight">@copyright Wagner S Veras</label></div>
+</body>
+</html>

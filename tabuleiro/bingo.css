@@ -1,0 +1,178 @@
+
+*{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #222;
+    color: #AAA;
+    font-size: 0.98em;
+}
+th{
+    font-size: 1.3em;
+}
+td, th{
+    border: solid 1px #777;
+    border-radius: 3px;
+}
+.numeroNaoSorteado{
+    color: #444;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    padding-inline: 10px;
+    border-radius: 8px;
+    box-shadow: none;
+}
+.numeroSorteado{
+    color: #000;
+    background-color: #ef6;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    padding-inline: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgb(136, 136, 121);
+    transition: 500ms;
+}
+.destacarNumeroHistorico{
+    color: #ef6;
+    font-size: 20px;
+}
+div{
+    /* border: 1px solid pink; */
+    display: inline-block;
+    width: 365px;
+}
+#divAutomatico{
+    display: none;/* exibição do automático*/
+}
+#divPainel{
+    display: list-item;
+    position: relative;
+    height: 110px;
+    text-align: center;
+    z-index: 1;
+}
+.numeroSorteadoPrincipal, .numeroSorteadoPrincipalDestaque{
+    position: relative;
+    font-size: 3em;
+    font-weight: bold;
+    color: #ef6;
+    width: 100%;
+    transition: font-size 1s;
+    z-index: 5;
+}
+.numeroSorteadoPrincipalDestaque{
+    position: relative;
+    font-size: 8em;
+    width: 90%;
+    border: 1px solid #777;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+    transition: font-size 100ms;
+    z-index: 5;
+}
+#divResultado{
+    display: block;
+    position: relative;
+    height: 500px;
+    top:0px;
+    text-align: center;
+    z-index: 0;
+}
+.historico{
+    display: block;
+    position: relative;
+    height: 500px;
+    top: -500px;
+    overflow-y: scroll;
+    opacity: 0;
+    z-index: 0;
+    transition: 1s;
+}
+.transition3{
+    opacity: 1;
+    z-index: 0;
+    transition: 1s;
+}
+#divCopyRight{
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+}
+#btnSortearNumero{
+    width: 150px;
+    height: 40px;
+    color: #fff;
+}
+#btnSortearNumero:active{
+    color: #777;
+}
+#tablePainelBingo{
+    border: none;
+    border-spacing: 8px;
+    margin: auto;
+}
+#tableHistorico{
+    border: none;
+    /* margin: auto; */
+    margin-left: auto;
+    margin-right: 0px;
+    padding: 6px;
+    width: 300px;
+    text-align: center;
+}
+#ranIntervalo{
+    width: 205px;
+}
+#lblCopyRight{
+    color: #000;
+}
+#divMenu{
+    position: absolute;
+    top: 180px;
+}
+.menuLateral{
+    position: absolute;
+    border: 1px solid #777;
+    width: 100px;
+    height: 50px;
+    left: -45px;
+    font-size: 1em;
+    transform: rotate(270deg);
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition-property: top, background-color, z-index;
+    transition-timing-function: ease-in-out;
+    transition-duration: 500ms;
+}
+.menuBtn1{
+    top: 50px;
+    background-color: #444;
+    z-index: 2;
+}
+.menuBtn2{
+    top: 130px;
+    background-color: #000;
+    z-index: 1;
+}
+.transition1{
+    top: 130px;
+    background-color: #000;
+    transition-property: top, background-color, z-index;
+    transition-timing-function: ease-in-out;
+    transition-duration: 500ms;
+    z-index: 1;
+}
+.transition2{
+    top: 50px;
+    background-color: #444;
+    transition-property: top, background-color, z-index;
+    transition-timing-function: ease-in-out;
+    transition-duration: 500ms;
+    z-index: 2;
+}
+.delay1{
+    transition-delay: 10ms;
+}
+.delay2{
+    transition-delay: 100ms;
+}
