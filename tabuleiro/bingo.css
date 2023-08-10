@@ -2,8 +2,8 @@
 *{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: #222;
-    color: #AAA;
-    font-size: 0.98em;
+    color: #aaa;
+    font-size: 1em;
 }
 th{
     font-size: 1.3em;
@@ -13,7 +13,7 @@ td, th{
     border-radius: 3px;
 }
 .numeroNaoSorteado{
-    color: #444;
+    color: #666;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     padding-inline: 10px;
@@ -33,11 +33,12 @@ td, th{
 .destacarNumeroHistorico{
     color: #ef6;
     font-size: 20px;
+    white-space: nowrap;
 }
 div{
     /* border: 1px solid pink; */
     display: inline-block;
-    width: 365px;
+    width: 900px;
 }
 #divAutomatico{
     display: none;/* exibição do automático*/
@@ -45,33 +46,31 @@ div{
 #divPainel{
     display: list-item;
     position: relative;
-    height: 110px;
+    height: 100px;
     text-align: center;
     z-index: 1;
 }
 .numeroSorteadoPrincipal, .numeroSorteadoPrincipalDestaque{
     position: relative;
+    background-color: none;
+    border: 1px solid #777;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
     font-size: 3em;
     font-weight: bold;
     color: #ef6;
-    width: 100%;
+    width: 50%;
     transition: font-size 1s;
     z-index: 5;
 }
 .numeroSorteadoPrincipalDestaque{
-    position: relative;
     font-size: 8em;
-    width: 90%;
-    border: 1px solid #777;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px black;
     transition: font-size 100ms;
-    z-index: 5;
 }
 #divResultado{
     display: block;
     position: relative;
-    height: 500px;
+    height: 100%;
     top:0px;
     text-align: center;
     z-index: 0;
@@ -79,10 +78,9 @@ div{
 .historico{
     display: block;
     position: relative;
-    height: 500px;
-    top: -500px;
+    height: 50px;
     overflow-y: scroll;
-    opacity: 0;
+    opacity: 1;
     z-index: 0;
     transition: 1s;
 }
@@ -91,11 +89,14 @@ div{
     z-index: 0;
     transition: 1s;
 }
-#divCopyRight{
+#divBuildedBy{
     display: block;
     position: absolute;
-    bottom: 10px;
     text-align: center;
+    z-index: 10;
+}
+#lblBuildedBy{
+    color: #777;
 }
 #btnSortearNumero{
     width: 150px;
@@ -122,12 +123,10 @@ div{
 #ranIntervalo{
     width: 205px;
 }
-#lblCopyRight{
-    color: #000;
-}
 #divMenu{
+    display: none;
     position: absolute;
-    top: 180px;
+    top: 50px;
 }
 .menuLateral{
     position: absolute;

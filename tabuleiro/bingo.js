@@ -150,22 +150,18 @@ function alternarMenu(){
 
 const construirHistorico = (numeroSorteado) => {
     const objHistorico = {
-        dataHora: new Date().toLocaleString(),
+        hora: `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`,
         numero: numeroSorteado
     }
     
     arrHistorico.push(objHistorico)
     document.getElementById("divNumeroSorteado").innerHTML = numeroSorteado
-    document.getElementById("tableHistorico").innerHTML = ""
+    const divHistorico = document.getElementById("divHistorico")
+    let aux = ""
     arrHistorico.forEach((item) => {
-        const tableHistorico = document.getElementById("tableHistorico")
-        const trAux = document.createElement("tr")
-        trAux.id = item.numero
-        tableHistorico.appendChild(trAux)
-        const tdAux = document.createElement("td")
-        tdAux.innerHTML = `<label style="font-size: 10px">${item.dataHora}</label> &raquo; <label class="destacarNumeroHistorico">${item.numero}</label>`
-        trAux.appendChild(tdAux)
+        aux += `<label style="font-size: 10px">${item.hora}</label> &raquo; <label class="destacarNumeroHistorico">${item.numero}</label> `
     })
+    divHistorico.innerHTML = aux
     document.getElementById("divHistorico").scrollTop = 5000
 }
 
@@ -224,4 +220,3 @@ const verificarSeNumeroJaFoiSorteado = (numero) => {
     }
     return false
 }
-
