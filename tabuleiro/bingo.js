@@ -113,6 +113,7 @@ window.onload = () => {
         timeOut = setTimeout(() => {
             document.getElementById("btnSortearNumero").disabled = false
             document.getElementById("divNumeroSorteado").className = "numeroSorteadoPrincipal"
+            btnSortearNumero.focus()
         }, 2000);
         document.getElementById("divNumeroSorteado").className = "numeroSorteadoPrincipalDestaque"
         btnSortearNumero.disabled = true
@@ -140,12 +141,12 @@ window.onload = () => {
 
 function alternarMenu(){
     const btnMenuSorteio = document.getElementById("btnMenuSorteio")
-    const btnMenuHistorico = document.getElementById("btnMenuHistorico")
+    // const btnMenuHistorico = document.getElementById("btnMenuHistorico")
     // const divResultado = document.getElementById("divResultado")
-    const divHistorico = document.getElementById("divHistorico")
+    // const divHistorico = document.getElementById("divHistorico")
     btnMenuSorteio.classList.toggle("transition1")
-    btnMenuHistorico.classList.toggle("transition2")
-    divHistorico.classList.toggle("transition3")
+    // btnMenuHistorico.classList.toggle("transition2")
+    // divHistorico.classList.toggle("transition3")
 }
 
 const construirHistorico = (numeroSorteado) => {
