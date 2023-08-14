@@ -1,17 +1,3 @@
-let fullData = null
-
-window.onload = () => {
-    const httpAjax = new XMLHttpRequest()
-    const url = `https://jsonplaceholder.typicode.com/posts`
-    httpAjax.open( 'GET' , url )
-    // request.responseText = 'json'
-    httpAjax.responseText = 'text'
-    httpAjax.send()
-    httpAjax.onload = () => {
-        fullData = httpAjax.response
-        // fullData = JSON.parse( fullData )
-    }
-}
 
 let controle = 75
 const numerosSorteados = []

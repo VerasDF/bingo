@@ -13,7 +13,7 @@ div{
     background-repeat: no-repeat; */
 }
 
-#idTabuleiro, #idCartela{
+.botao{
     display: list-item;
     padding: 1em;
     width: 200px;
@@ -24,9 +24,6 @@ div{
     margin-bottom: 2px;
     transition: 500ms;
 }
-#idTabuleiro:hover{
-    font-size: 2em;
-}
-#idCartela:hover{
-    font-size: 2em;
+.botao:hover{
+    font-size: 1.5em;
 }

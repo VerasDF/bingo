@@ -1,13 +1,18 @@
-const idTabuleiro = document.getElementById("idTabuleiro")
+const idTabuleiro1 = document.getElementById("idTabuleiro1")
+const idTabuleiro2 = document.getElementById("idTabuleiro2")
 const idCartela = document.getElementById("idCartela")
 
 window.addEventListener("load", ()=>{
-    idTabuleiro.addEventListener("click", (e)=>{
+    idTabuleiro1.addEventListener("click", (e)=>{
         e.preventDefault()
-        window.location.replace("./tabuleiro")
+        window.location.href="./tabuleiro1"
+    })
+    idTabuleiro2.addEventListener("click", (e)=>{
+        e.preventDefault()
+        window.location.href="./tabuleiro2"
     })
     idCartela.addEventListener("click", (e)=>{
         e.preventDefault()
-        window.location.replace("./cartela")
+        window.location.href="./cartela"
     })
 })
