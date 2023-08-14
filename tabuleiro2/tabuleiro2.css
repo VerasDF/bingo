@@ -6,7 +6,7 @@
     font-size: 12px;
 }
 
-#divTabuleiro, #divBotaoSortearNumero, #divMensagem, #divHistorico {
+#divTabuleiro, #divBotaoSortearNumero, #divMensagem, #divHistorico, #divCopyRight {
     border: 1px solid #999;
     border-radius: 5px;
     width: 80%;
@@ -17,8 +17,11 @@
 #divBotaoSortearNumero{
     margin: 10px auto;
 }
-#divMensagem{
+#divMensagem, #divCopyRight{
     border: none;
+}
+#divCopyRight{
+    color: #555;
 }
 #btnSortearNumero {
     padding: 10px;
