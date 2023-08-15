@@ -47,6 +47,7 @@ function destacar(){
     setTimeout(()=>{
         divDestaque.classList.toggle("destacar")
         btnSortearNumero.disabled = false
+        btnSortearNumero.focus()
     },3000)
 }
 
