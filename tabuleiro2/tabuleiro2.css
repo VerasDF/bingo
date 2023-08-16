@@ -41,26 +41,70 @@
     color: black;
     background-color: #aaa;
 }
-.divOrdemNumeroSorteado{
+.divHistoricoDeNumeroSorteado{
     display: inline-block;
     border: 1px solid #333;
     padding: 2px;
     margin: 2px;
 }
-.destaque{
+.divDestaque{
     opacity: 0;
-    position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);
-    font-size: 1em; color: white; width: 60%; text-align: center;
-    padding: 10px; padding-inline: 30px;
-    border: 1px solid yellowgreen;
-    border-radius: 15px;
-    box-shadow: 0px 0px 15px yellowgreen;
-    z-index: -1;
-    transition: 250ms;
 }
-.destacar{
-    opacity: 1;
-    font-size: 6em;
-    z-index: 1;
-    transition: 250ms;
+.sorteado{
+    animation-name: destacar;
+    animation-duration: 5s;
 }
+
+@keyframes destacar {
+    0% {
+        border: 1px solid black;
+        position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);
+        padding: 10px; padding-inline: 30px;
+        font-size: 1em; color: white; width: 60%; text-align: center;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px black;
+        opacity: 0;
+        font-size: 0.1em;
+        z-index: -1;
+    }
+    10% {
+        border: 1px solid yellowgreen;
+        position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);
+        padding: 10px; padding-inline: 30px;
+        font-size: 1em; color: white; width: 60%; text-align: center;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px yellowgreen;
+        opacity: 1;
+        font-size: 6em;
+        z-index: 0;
+    }
+    40% {
+        border: 1px solid yellow;
+        position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);
+        padding: 10px; padding-inline: 30px;
+        font-size: 1em; color: white; width: 60%; text-align: center;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px yellow;
+        opacity: 1;
+        font-size: 6em;
+        z-index: 0;
+    }
+    80% {
+        border: 1px solid gray;
+        position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);
+        padding: 10px; padding-inline: 30px;
+        font-size: 0.1em; color: white; width: 60%; text-align: center;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px gray;
+        opacity: 0;
+        font-size: 1em;
+        z-index: -1;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+        font-size: 0.1em;
+    }
+
+  }
+  

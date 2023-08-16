@@ -17,7 +17,6 @@ function sortearNumero(){
     } while (numero.className !== "numeroNaoSorteado" && numerosSorteados.length < 75)
     controle--
     numeroSorteado = determinarLetra(numeroSorteado)
-    divDestaque.innerHTML = `${numeroSorteado.letra}-${numeroSorteado.numero}`
     numerosSorteados.push(numeroSorteado)
     produzirHistorico()
     destacar()
@@ -30,7 +29,7 @@ function sortearNumero(){
 function produzirHistorico(){
     let aux = ""
     numerosSorteados.forEach((item)=>{
-        aux += `<div class="divOrdemNumeroSorteado">${item.letra}-${item.numero}</div>`
+        aux += `<div class="divHistoricoDeNumeroSorteado">${item.letra}-${item.numero}</div>`
     })
     if(controle > 0) {
         divMensagem.innerHTML = (controle < 2 ? `Resta apenas 1 número a ser sorteado!` : `Restam ${controle} números a serem sorteados`)
@@ -43,9 +42,18 @@ function produzirHistorico(){
 
 function destacar(){
     btnSortearNumero.disabled = true
-    divDestaque.classList.toggle("destacar")
+    const his = document.getElementsByClassName("divHistoricoDeNumeroSorteado")
+    const hi = his[his.length - 1]
+    hi.classList.toggle("sorteado")
+    
     setTimeout(()=>{
-        divDestaque.classList.toggle("destacar")
+        const his = document.getElementsByClassName("divHistoricoDeNumeroSorteado")
+        for (let i = 0; i < his.length; i++) {
+            const el = his[i]
+            if (el.className === "divHistoricoDeNumeroSorteado sorteado") {
+                el.className = "divHistoricoDeNumeroSorteado"
+            }
+        }
         btnSortearNumero.disabled = false
     },3000)
 }
