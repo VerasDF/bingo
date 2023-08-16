@@ -55,6 +55,7 @@ function destacar(){
             }
         }
         btnSortearNumero.disabled = false
+        btnSortearNumero.focus()
     },3000)
 }
 
