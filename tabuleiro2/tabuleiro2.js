@@ -9,27 +9,27 @@ btnSortearNumero.addEventListener("click", (e)=>{ sortearNumero() })
 
 function sortearNumero(){
     if (numerosSorteados.length === 75) {return}
-    let numeroSorteado = null
+    let marcarSorteado = null
     do {
-        numeroSorteado = Math.floor(Math.random() * 75) + 1
-        numero = document.getElementById(`div${numeroSorteado}`)
+        marcarSorteado = Math.floor(Math.random() * 75) + 1
+        numero = document.getElementById(`div${marcarSorteado}`)
         
-    } while (numero.className !== "numeroNaoSorteado" && numerosSorteados.length < 75)
+    } while (numero.className !== "numeroDoTabuleiro" && numerosSorteados.length < 75)
     controle--
-    numeroSorteado = determinarLetra(numeroSorteado)
-    numerosSorteados.push(numeroSorteado)
+    marcarSorteado = determinarLetra(marcarSorteado)
+    numerosSorteados.push(marcarSorteado)
     produzirHistorico()
     destacar()
     
-    if(numero.className === "numeroNaoSorteado"){
-        numero.classList.toggle("numeroSorteado")
+    if(numero.className === "numeroDoTabuleiro"){
+        numero.classList.toggle("marcarSorteado")
     }
 }
 
 function produzirHistorico(){
     let aux = ""
     numerosSorteados.forEach((item)=>{
-        aux += `<div class="divHistoricoDeNumeroSorteado">${item.letra}-${item.numero}</div>`
+        aux += `<div class="divHistoricoDeNumeros">${item.letra}-${item.numero}</div>`
     })
     if(controle > 0) {
         divMensagem.innerHTML = (controle < 2 ? `Resta apenas 1 número a ser sorteado!` : `Restam ${controle} números a serem sorteados`)
@@ -42,16 +42,16 @@ function produzirHistorico(){
 
 function destacar(){
     btnSortearNumero.disabled = true
-    const his = document.getElementsByClassName("divHistoricoDeNumeroSorteado")
+    const his = document.getElementsByClassName("divHistoricoDeNumeros")
     const hi = his[his.length - 1]
     hi.classList.toggle("sorteado")
     
     setTimeout(()=>{
-        const his = document.getElementsByClassName("divHistoricoDeNumeroSorteado")
+        const his = document.getElementsByClassName("divHistoricoDeNumeros")
         for (let i = 0; i < his.length; i++) {
             const el = his[i]
-            if (el.className === "divHistoricoDeNumeroSorteado sorteado") {
-                el.className = "divHistoricoDeNumeroSorteado"
+            if (el.className === "divHistoricoDeNumeros sorteado") {
+                el.className = "divHistoricoDeNumeros"
             }
         }
         btnSortearNumero.disabled = false
