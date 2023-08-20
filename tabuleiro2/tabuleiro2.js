@@ -56,7 +56,7 @@ function destacar(){
         }
         btnSortearNumero.disabled = false
         btnSortearNumero.focus()
-    },3000)
+    },5000)
 }
 
 function determinarLetra(num){
