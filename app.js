@@ -5,14 +5,14 @@ const idCartela = document.getElementById("idCartela")
 window.addEventListener("load", ()=>{
     idTabuleiro1.addEventListener("click", (e)=>{
         e.preventDefault()
-        window.location.href="./tabuleiro1"
+        window.location.href="./tabuleiro1/index.html"
     })
     idTabuleiro2.addEventListener("click", (e)=>{
         e.preventDefault()
-        window.location.href="./tabuleiro2"
+        window.location.href="./tabuleiro2/index.html"
     })
     idCartela.addEventListener("click", (e)=>{
         e.preventDefault()
-        window.location.href="./cartela"
+        window.location.href="./cartela/index.html"
     })
 })
