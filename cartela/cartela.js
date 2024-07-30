@@ -150,19 +150,19 @@ function construirCartelaMetaDados(){
 }
 
 function distribuirNumeros(numeroDaVez){
-    if (numeroDaVez >=1 && numeroDaVez <= 15) {
+    if (numeroDaVez >= 1 && numeroDaVez <= 15) {
         avaliarArrayDeColuna(numeroDaVez, objCartela.colB)
     }
-    if (numeroDaVez >=16 && numeroDaVez <= 30) {
+    if (numeroDaVez >= 16 && numeroDaVez <= 30) {
         avaliarArrayDeColuna(numeroDaVez, objCartela.colI)
     }
-    if (numeroDaVez >=31 && numeroDaVez <= 45) {
-        if(objCartela.colN.length<4){avaliarArrayDeColuna(numeroDaVez, objCartela.colN)}
+    if (numeroDaVez >= 31 && numeroDaVez <= 45) {
+        if(objCartela.colN.length < 4){avaliarArrayDeColuna(numeroDaVez, objCartela.colN)}
     }
-    if (numeroDaVez >=46 && numeroDaVez <= 60) {
+    if (numeroDaVez >= 46 && numeroDaVez <= 60) {
         avaliarArrayDeColuna(numeroDaVez, objCartela.colG)
     }
-    if (numeroDaVez >=61 && numeroDaVez <= 75) {
+    if (numeroDaVez >= 61 && numeroDaVez <= 75) {
         avaliarArrayDeColuna(numeroDaVez, objCartela.colO)
     }
     if (totalDeNumerosNaCartela < 24){
