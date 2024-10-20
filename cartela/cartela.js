@@ -9,15 +9,15 @@ let strNumerosMarcados = null
 
 
 window.onload = () => {
-    inicializarObjCartela()
-    inicializarGrupoDeNumeros()
-    construirCartelaMetaDados()
-    atribuirEventos()
+    inicializarObjCartela () 
+    inicializarGrupoDeNumeros () 
+    construirCartelaMetaDados () 
+    atribuirEventos () 
 }
 
 function $(tag){return document.getElementById(tag)}
 
-function inicializarObjCartela(){
+function inicializarObjCartela () {
     objCartela.codCartela = null
     objCartela.numerosObj = {}
     objCartela.numerosArr = []
@@ -32,7 +32,7 @@ function inicializarObjCartela(){
 function inicializarGrupoDeNumeros () {
     const todosOsNumerosRecuperados = localStorage.getItem(`numerosDaCartela${cartelaAtualNaTela}`)
     if(todosOsNumerosRecuperados === null){
-        gerarNumerosParaCartela()
+        gerarNumerosParaCartela () 
     } else {
         const arrNumerosRecuperados = todosOsNumerosRecuperados.split(",")
         for (let i = 0; i < arrNumerosRecuperados.length; i++) {
@@ -42,7 +42,7 @@ function inicializarGrupoDeNumeros () {
     }
 }
 
-function numerosQueEstaoMarcadosParaGuardar(){
+function numerosQueEstaoMarcadosParaGuardar () {
     const arrLetras = ["B", "I", "N", "G", "O"]
     let numerosMarcados = []
     for (let i = 0; i < arrLetras.length; i++) {
@@ -57,8 +57,8 @@ function numerosQueEstaoMarcadosParaGuardar(){
     return numerosMarcados
 }
 
-function destacarNumerosJaMarcados(){
-    limparTodasAsMarcacoes()
+function destacarNumerosJaMarcados () {
+    limparTodasAsMarcacoes () 
     const arrLetras = ["B", "I", "N", "G", "O"]
     const strNumerosMarcados = localStorage.getItem(`numerosMarcados${cartelaAtualNaTela}`)
     let numerosMarcados = ((strNumerosMarcados===null || strNumerosMarcados === "") ? null : strNumerosMarcados.split(","))
@@ -75,7 +75,7 @@ function destacarNumerosJaMarcados(){
     }
 }
 
-function limparTodasAsMarcacoes(){
+function limparTodasAsMarcacoes () {
     const arrLetras = ["B", "I", "N", "G", "O"]
     for (let i = 0; i < arrLetras.length; i++) {
         const letra = arrLetras[i];
@@ -86,12 +86,12 @@ function limparTodasAsMarcacoes(){
     }
 }
 
-function gerarNumerosParaCartela(){
-    inicializarObjCartela()
-    numero_aleatorio(objCartela)
-    function numero_aleatorio(obj) {
+function gerarNumerosParaCartela () {
+    inicializarObjCartela () 
+    numero_aleatorio (objCartela)
+    function numero_aleatorio (obj) {
         while (totalDeNumerosNaCartela < 24) {
-            let aleatorio = Math.floor(Math.random() * 75);
+            let aleatorio = Math.floor(Math.random () * 75);
             distribuirNumeros(aleatorio)
         }
         obj.colB.sort((a, b) => a - b)
@@ -102,9 +102,9 @@ function gerarNumerosParaCartela(){
     } 
 }
 
-function construirCartelaMetaDados(){
-    const dt = new Date()
-    const idCartela = dt.getTime()
+function construirCartelaMetaDados () {
+    const dt = new Date () 
+    const idCartela = dt.getTime () 
 
     alimentarObjeto("B", objCartela.colB)
     alimentarObjeto("I", objCartela.colI)
@@ -127,10 +127,10 @@ function construirCartelaMetaDados(){
     if(log===true) console.log(`Aba:${cartelaAtualNaTela} =>`, localStorage.getItem(`numerosDaCartela${cartelaAtualNaTela}`))
     if(log===true) console.log(`NumerosMarcados:${cartelaAtualNaTela} =>`, localStorage.getItem(`numerosMarcados${cartelaAtualNaTela}`))
 
-    construirCartelaHtml()
-    destacarNumerosJaMarcados()
+    construirCartelaHtml () 
+    destacarNumerosJaMarcados () 
     
-    function construirCartelaHtml(){
+    function construirCartelaHtml () {
         alimentarObjeto("B", objCartela.colB)
         alimentarObjeto("I", objCartela.colI)
         alimentarObjeto("N", objCartela.colN)
@@ -149,7 +149,7 @@ function construirCartelaMetaDados(){
     }
 }
 
-function distribuirNumeros(numeroDaVez){
+function distribuirNumeros (numeroDaVez) {
     if (numeroDaVez >= 1 && numeroDaVez <= 15) {
         avaliarArrayDeColuna(numeroDaVez, objCartela.colB)
     }
@@ -185,20 +185,20 @@ function distribuirNumeros(numeroDaVez){
     }
 }
 
-function atribuirEventos(){
+function atribuirEventos () {
     const arrBotoesNumericos = Object.keys(objCartela.numerosObj)
     for (let i = 0; i < arrBotoesNumericos.length; i++) {
         const strBtn = arrBotoesNumericos[i]
         const idBnt = document.getElementById(strBtn)
         idBnt.addEventListener("click", (e)=>{
-            e.stopPropagation()
-            e.preventDefault()
+            e.stopPropagation () 
+            e.preventDefault () 
             if(idBnt.className != "numeroSorteado"){
                 idBnt.className = "numeroSorteado"
             } else {
                 idBnt.className = "numeroNaoSorteado"
             }
-            const aux = numerosQueEstaoMarcadosParaGuardar()
+            const aux = numerosQueEstaoMarcadosParaGuardar () 
             if(aux !== ""){
                 localStorage.setItem(`numerosMarcados${cartelaAtualNaTela}`, aux)
             }
@@ -207,58 +207,58 @@ function atribuirEventos(){
             }
         })
     }
-    $("idGerarNovosNumeros").addEventListener("click", (e)=>{
+    $("idGerarNovosNumeros").addEventListener ("click", (e)=>{
         if(confirm("Você confirma ?")){
             if(confirm("Essa ação não poderá ser desfeita !")){
                 localStorage.removeItem(`numerosMarcados${cartelaAtualNaTela}`)
-                gerarNumerosParaCartela()
-                construirCartelaMetaDados()
+                gerarNumerosParaCartela () 
+                construirCartelaMetaDados () 
                 $("idGerarNovosNumeros").disabled = true
-                setTimeout(()=>{
+                setTimeout( () =>{
                     $("idGerarNovosNumeros").disabled = false
                 },1000)
             }
         }
     })
-    $("btnCartela1").addEventListener("click", (e)=>{
-        e.preventDefault()
+    $("btnCartela1").addEventListener ("click", (e)=>{
+        e.preventDefault () 
         cartelaAtualNaTela = 0
-        inicializarObjCartela()
-        inicializarGrupoDeNumeros()
-        construirCartelaMetaDados()
+        inicializarObjCartela () 
+        inicializarGrupoDeNumeros () 
+        construirCartelaMetaDados () 
         $("btnCartela1").className = "menuButtonAtivado"
         $("btnCartela2").className = "menuButtonDesativado"
         $("btnCartela3").className = "menuButtonDesativado"
         $("btnCartela4").className = "menuButtonDesativado"
     })
-    $("btnCartela2").addEventListener("click", (e)=>{
-        e.preventDefault()
+    $("btnCartela2").addEventListener ("click", (e)=>{
+        e.preventDefault () 
         cartelaAtualNaTela = 1
-        inicializarObjCartela()
-        inicializarGrupoDeNumeros()
-        construirCartelaMetaDados()
+        inicializarObjCartela () 
+        inicializarGrupoDeNumeros () 
+        construirCartelaMetaDados () 
         $("btnCartela1").className = "menuButtonDesativado"
         $("btnCartela2").className = "menuButtonAtivado"
         $("btnCartela3").className = "menuButtonDesativado"
         $("btnCartela4").className = "menuButtonDesativado"
     })
-    $("btnCartela3").addEventListener("click", (e)=>{
-        e.preventDefault()
+    $("btnCartela3").addEventListener ("click", (e)=>{
+        e.preventDefault () 
         cartelaAtualNaTela = 2
-        inicializarObjCartela()
-        inicializarGrupoDeNumeros()
-        construirCartelaMetaDados()
+        inicializarObjCartela () 
+        inicializarGrupoDeNumeros () 
+        construirCartelaMetaDados () 
         $("btnCartela1").className = "menuButtonDesativado"
         $("btnCartela2").className = "menuButtonDesativado"
         $("btnCartela3").className = "menuButtonAtivado"
         $("btnCartela4").className = "menuButtonDesativado"
     })
-    $("btnCartela4").addEventListener("click", (e)=>{
-        e.preventDefault()
+    $("btnCartela4").addEventListener ("click", (e)=>{
+        e.preventDefault () 
         cartelaAtualNaTela = 3
-        inicializarObjCartela()
-        inicializarGrupoDeNumeros()
-        construirCartelaMetaDados()
+        inicializarObjCartela () 
+        inicializarGrupoDeNumeros () 
+        construirCartelaMetaDados () 
         $("btnCartela1").className = "menuButtonDesativado"
         $("btnCartela2").className = "menuButtonDesativado"
         $("btnCartela3").className = "menuButtonDesativado"
